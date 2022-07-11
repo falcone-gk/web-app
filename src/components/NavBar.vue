@@ -49,7 +49,6 @@ header {
 
     a {
       position: relative;
-      font-family: 'Lato';
       font-weight: 700;
       font-size: 1.3rem;
       color: #ffffff;

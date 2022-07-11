@@ -55,7 +55,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
   }
 }
 .description {
-  font-size: min(4vw, 20px);
+  font-size: min(3.5vw, 20px);
   color: var(--para-color);
   opacity: .75;
   width: 70%;
