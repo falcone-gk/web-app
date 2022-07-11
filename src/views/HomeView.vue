@@ -3,15 +3,13 @@
     <div class="job-title">
       <h1>
         Your
-        <vue-writer
-        :array="technologies"
-        :typeSpeed="70"
-        :eraseSpeed="20" />
+        <vue-writer :array="technologies" :typeSpeed="70" :eraseSpeed="20" />
         developer.
       </h1>
       <p class="description">
-        I'm Enzo Falcón, I have 2 years of programming experience and I specialise in backend development. 
+        I'm Enzo Falcón, I have 2 years of programming experience and I specialise in backend development.
       </p>
+      <a class="contact-url" href="#">Get in touch</a>
     </div>
   </section>
 </template>
@@ -32,11 +30,21 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
     white-space: nowrap;
   }
 }
+
 @keyframes fadeIn {
-  0% { opacity: 0 }
-  50% { opacity: 1 }
-  100% { opacity: 0 }
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
 }
+
 .is-typed {
   display: inline;
 
@@ -54,6 +62,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
     animation: fadeIn 1s infinite alternate;
   }
 }
+
 .description {
   font-size: min(3.5vw, 20px);
   color: var(--para-color);
@@ -63,4 +72,31 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
   max-width: 750px;
   margin-bottom: 1.2vh;
 }
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(5px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(5px);
+  }
+}
+
+.contact-url {
+  position: relative;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+
+  &::after {
+    content: ">";
+    position: absolute;
+    animation: slide 1.5s infinite;
+  }
+}
+
 </style>
