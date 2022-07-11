@@ -1,6 +1,8 @@
 <template>
   <NavBar />
-  <router-view/>
+  <main>
+    <router-view/>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -14,7 +16,8 @@ import NavBar from '@/components/NavBar.vue'
 :root {
   --bg-dark: #0c0c0c;
   --side-padding: 3em;
-  --main-color: #F9B975;
+  --primary-color: #F9B975;
+  --para-color: hsla(0,0%,96.1%,0.65);
 }
 
 * {
@@ -25,6 +28,14 @@ import NavBar from '@/components/NavBar.vue'
 
 body {
   background-color: var(--bg-dark);
+}
+
+main {
+  padding: 0 var(--side-padding);
+
+  @media screen and (max-width: 600px) {
+    padding: 1em;
+  }
 }
 
 #app {

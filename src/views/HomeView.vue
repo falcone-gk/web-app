@@ -9,6 +9,9 @@
         :eraseSpeed="20" />
         developer.
       </h1>
+      <p class="description">
+        I'm Enzo Falcón, I have 2 years of programming experience and I specialise in backend development. 
+      </p>
     </div>
   </section>
 </template>
@@ -20,12 +23,12 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
 
 <style lang="scss">
 .job-title {
-  margin: 6em var(--side-padding);
+  margin-top: 6em;
   text-align: left;
 
   h1 {
     color: #ffffff;
-    font-size: max(5vw, 25px);
+    font-size: min(7vw, 60px);
   }
 }
 @keyframes fadeIn {
@@ -38,16 +41,25 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
 
   span.typed {
     display: inline-block;
-    color: var(--main-color);
+    color: var(--primary-color);
     vertical-align: bottom;
     margin-right: 10px;
   }
 
   span.cursor {
     display: inline-block;
-    background-color: var(--main-color);
-    width: 10px;
+    background-color: var(--primary-color);
+    width: min(1vw, 10px);
     animation: fadeIn 1s infinite alternate;
   }
+}
+.description {
+  font-size: min(4vw, 20px);
+  color: var(--para-color);
+  opacity: .75;
+  width: 70%;
+  min-width: 350px;
+  max-width: 750px;
+  margin-bottom: 1.2vh;
 }
 </style>

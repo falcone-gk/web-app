@@ -59,7 +59,7 @@ header {
       }
 
       &.router-link-active {
-        color: var(--main-color);
+        color: var(--primary-color);
       }
 
       &:after {
@@ -70,7 +70,7 @@ header {
         height: 4px;
         bottom: -4px;
         left: 0;
-        background-color: var(--main-color);
+        background-color: var(--primary-color);
         border-radius: 5px;
         transform-origin: bottom center;
         transition: transform 0.25s ease-out;
