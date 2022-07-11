@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="mq">
     <div class="name-logo">
       <p>Enzo Falcón</p>
     </div>
@@ -12,15 +12,24 @@
   </header>
 </template>
 
+<script setup lang="ts">
+import { useMq } from "vue3-mq"
+
+const mq = useMq()
+</script>
+
 <style lang="scss" scoped>
 $medium: 600px;
 
 header {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   padding: 1em var(--side-padding);
-}
+
+  &.smMinus {
+    flex-direction: column;
+  }
+
   .name-logo {
     font-family: 'Lobster', cursive;
     font-size: 30px;
@@ -31,20 +40,12 @@ header {
       display: inline;
       margin-right: auto;
       color: #ffffff;
-
-      @media screen and (max-width: #{$medium}) {
-        margin: auto;
-      }
     }
   }
 
   .nav-links {
     display: flex;
     gap: min(5vw, 2em);
-
-    @media screen and (max-width: #{$medium}) {
-      flex: 1 1 auto;
-    }
 
     a {
       position: relative;
@@ -53,10 +54,6 @@ header {
       font-size: 1.3rem;
       color: #ffffff;
       text-decoration: none;
-
-      @media screen and (max-width: #{$medium}) {
-        flex: 1 1 auto;
-      }
 
       &.router-link-active {
         color: var(--primary-color);
@@ -81,4 +78,5 @@ header {
       }
     }
   }
+}
 </style>

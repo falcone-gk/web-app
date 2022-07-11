@@ -1,13 +1,15 @@
 <template>
   <NavBar />
-  <main>
+  <main :class="mq">
     <router-view/>
   </main>
 </template>
 
 <script setup lang="ts">
+import { useMq } from "vue3-mq"
 import NavBar from '@/components/NavBar.vue'
 
+const mq = useMq()
 </script>
 
 <style lang="scss">
@@ -33,8 +35,8 @@ body {
 main {
   padding: 0 var(--side-padding);
 
-  @media screen and (max-width: 600px) {
-    padding: 1em;
+  &.mdMinus {
+    padding: 0 1em;
   }
 }
 
