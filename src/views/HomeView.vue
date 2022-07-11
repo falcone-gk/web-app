@@ -29,6 +29,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
   h1 {
     color: #ffffff;
     font-size: min(7vw, 60px);
+    white-space: nowrap;
   }
 }
 @keyframes fadeIn {
@@ -43,7 +44,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
     display: inline-block;
     color: var(--primary-color);
     vertical-align: bottom;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   span.cursor {
