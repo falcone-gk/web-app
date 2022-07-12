@@ -1,7 +1,13 @@
 <template>
   <div class="input-wrapper">
     <div class="form-group">
-      <input :value="modelValue" :name="name" @input="handleInput" class="form-control" :type="type" :placeholder="label">
+      <input
+      :value="props.modelValue"
+      :name="props.name"
+      @input="handleInput"
+      class="form-control"
+      :type="props.type"
+      :placeholder="props.label">
       <label class="label-control">{{ label }}</label>
     </div>
     <span v-if="error" class="error-msg">{{ error.$message }}</span>
