@@ -17,7 +17,7 @@ const mq = useMq()
 
 :root {
   --bg-dark: #0c0c0c;
-  --side-padding: 3em;
+  --side-padding: min(12vw, 250px);
   --primary-color: #F9B975;
   --para-color: hsla(0,0%,96.1%,0.65);
 }
@@ -36,7 +36,7 @@ main {
   padding: 0 var(--side-padding);
 
   &.mdMinus {
-    padding: 0 1em;
+    padding: 0 1.5em;
   }
 }
 
