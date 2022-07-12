@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="about-me">
     <div class="job-title">
       <h1>
         Your
@@ -12,16 +12,38 @@
       <a class="contact-url" href="#">Get in touch</a>
     </div>
   </section>
+  <section class="contact-me">
+    <h1 class="section-title">Contact me</h1>
+    <form>
+      <InputForm
+      type="email"
+      name="email"
+      label="Email"/>
+      <InputForm
+      type="text"
+      name="subject"
+      label="Subject"/>
+      <TextareaField
+      name="message"
+      label="Message"/>
+    </form>
+  </section>
 </template>
 
 <script setup lang="ts">
+import InputForm from '@/components/custom_elements/InputForm.vue'
+import TextareaField from '@/components/custom_elements/TextareaField.vue'
+
 const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Typescript"]
 
 </script>
 
 <style lang="scss">
+section {
+  margin: 6em 0;
+}
+
 .job-title {
-  margin-top: 6em;
   text-align: left;
 
   h1 {
@@ -99,4 +121,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
   }
 }
 
+.section-title {
+  color: #ffffff;
+}
 </style>
