@@ -29,11 +29,6 @@
   margin: auto;
   padding: 1em;
   transition: transform .5s ease;
-
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-5%)
-  }
 }
 .card-description {
   text-align: left;
@@ -56,19 +51,25 @@
   display: flex;
   justify-content: right;
   gap: 10px;
+
+  a {
+    cursor: pointer;
+    font-size: 12px;
+    background-color: var(--primary-color);
+    padding: .4rem .8rem;
+    border-radius: 2rem;
+    transition: background-color 0.5s ease;
+    outline: none;
+
+    &:hover {
+      background-color: var(--primary-dark-color);
+    }
+  }
 }
 .chip {
   font-size: 11px;
   padding: 3px 8px;
   background-color: #ffffff;
   border-radius: 5px;
-}
-a {
-  cursor: pointer;
-  font-size: 12px;
-  background-color: var(--primary-color);
-  padding: .4rem .8rem;
-  border-radius: 2rem;
-  outline: none;
 }
 </style>

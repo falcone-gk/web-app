@@ -18,7 +18,8 @@ const mq = useMq()
 :root {
   --bg-dark: #0c0c0c;
   --side-padding: min(12vw, 250px);
-  --primary-color: #F9B975;
+  --primary-color: #00e056;
+  --primary-dark-color: #00b947;
   --para-color: hsla(0,0%,96.1%,0.65);
 }
 
