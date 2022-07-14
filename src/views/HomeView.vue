@@ -12,6 +12,15 @@
       <a class="contact-url" href="#">Get in touch</a>
     </div>
   </section>
+  <section class="projects">
+    <h1 class="section-title">Projects</h1>
+    <div class="project-list">
+      <CardProject />
+      <CardProject />
+      <CardProject />
+      <CardProject />
+    </div>
+  </section>
   <section class="contact-me">
     <h1 class="section-title">Contact me</h1>
     <form>
@@ -31,6 +40,7 @@
 </template>
 
 <script setup lang="ts">
+import CardProject from '@/components/CardProject.vue'
 import InputForm from '@/components/custom_elements/InputForm.vue'
 import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
@@ -40,7 +50,7 @@ const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Type
 
 <style lang="scss">
 section {
-  margin: 6em 0;
+  margin: 18em 0;
 }
 
 .job-title {
@@ -95,6 +105,12 @@ section {
   margin-bottom: 1.2vh;
 }
 
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem,1fr));
+  grid-gap: 2rem;
+}
+
 @keyframes slide {
   0% {
     -webkit-transform: translateX(5px);
@@ -123,5 +139,6 @@ section {
 
 .section-title {
   color: #ffffff;
+  margin-bottom: 2em;
 }
 </style>
