@@ -28,7 +28,12 @@
   max-width: 30rem;
   margin: auto;
   padding: 1em;
-  transition: transform .5s ease;
+  transition: transform .5s ease, border-color .5s ease-out;
+
+  &:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--primary-color);
+  }
 }
 .card-description {
   text-align: left;
