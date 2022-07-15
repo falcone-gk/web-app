@@ -21,6 +21,38 @@
       <CardProject />
     </div>
   </section>
+  <section class="posts">
+    <h1 class="section-title">Posts</h1>
+    <div class="latest-post-list">
+      <div class="post">
+        <div class="post-info">
+          <h1 class="post-title">Título de un post</h1>
+          <p>Descripción: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quaerat, quam rem dignissimos illo eum necessitatibus distinctio? Rem, qui magnam.</p>
+        </div>
+        <div class="post-date">
+          <p><strong>Date released:</strong> 20/09/2022</p>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-info">
+          <h1 class="post-title">Título de un post</h1>
+          <p>Descripción: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quaerat, quam rem dignissimos illo eum necessitatibus distinctio? Rem, qui magnam.</p>
+        </div>
+        <div class="post-date">
+          <p><strong>Date released:</strong> 20/09/2022</p>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-info">
+          <h1 class="post-title">Título de un post</h1>
+          <p>Descripción: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quaerat, quam rem dignissimos illo eum necessitatibus distinctio? Rem, qui magnam.</p>
+        </div>
+        <div class="post-date">
+          <p><strong>Date released:</strong> 20/09/2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="contact-me">
     <h1 class="section-title">Contact me</h1>
     <form>
@@ -44,7 +76,7 @@ import CardProject from '@/components/CardProject.vue'
 import InputForm from '@/components/custom_elements/InputForm.vue'
 import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
-const technologies: string[] = ["Python", "Django", "Typescript", "VueJs", "Typescript"]
+const technologies: string[] = ["Python", "Django", "Typescript", "VueJs"]
 
 </script>
 
@@ -140,5 +172,48 @@ section {
 .section-title {
   color: #ffffff;
   margin-bottom: 2em;
+}
+
+.latest-post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.post {
+  background-color: #121212;
+  border-radius: 5px;
+  padding: .5em;
+  transition: transform .5s ease, border-color .5s ease-out;
+
+  &:hover {
+    transform: scale(1.01);
+    border: 1px solid var(--primary-color);
+  }
+
+  .post-info {
+    text-align: left;
+
+    h1 {
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    p {
+      color: var(--para-color);
+    }
+  }
+
+  .post-date {
+    border-top: 1px solid #ffffff;
+    margin-top: 1em;
+    padding-top: .5em;
+    text-align: left;
+
+    p {
+      font-size: 12px;
+      color: #ffffff;
+    }
+  }
 }
 </style>
