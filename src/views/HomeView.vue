@@ -76,7 +76,7 @@ import CardProject from '@/components/CardProject.vue'
 import InputForm from '@/components/custom_elements/InputForm.vue'
 import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
-const technologies: string[] = ["Python", "Django", "Typescript", "VueJs"]
+const technologies: string[] = ["Python", "Django", "HTML", "CSS", "Javascript", "Typescript", "VueJs"]
 
 </script>
 
