@@ -23,6 +23,10 @@ const mq = useMq()
   --para-color: hsla(0,0%,96.1%,0.65);
 }
 
+html{
+  scroll-behavior:smooth
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

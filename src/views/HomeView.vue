@@ -9,7 +9,7 @@
       <p class="description">
         I'm Enzo Falcón, I have 2 years of programming experience and I specialise in backend development.
       </p>
-      <a class="contact-url" href="#">Get in touch</a>
+      <a class="contact-url" href="#contact">Get in touch</a>
     </div>
   </section>
   <section class="projects">
@@ -53,7 +53,7 @@
       </div>
     </div>
   </section>
-  <section class="contact-me">
+  <section id="contact" class="contact-me">
     <h1 class="section-title">Contact me</h1>
     <form>
       <InputForm
