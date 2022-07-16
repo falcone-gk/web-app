@@ -19,7 +19,6 @@ const mq = useMq()
 </script>
 
 <style lang="scss" scoped>
-$medium: 600px;
 
 header {
   display: flex;
