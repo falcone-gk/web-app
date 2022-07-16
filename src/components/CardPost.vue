@@ -29,8 +29,9 @@
   text-align: left;
 
   h1 {
-    font-size: 16px;
+    font-size: 18px;
     color: #ffffff;
+    margin-bottom: .5em;
   }
 
   p {

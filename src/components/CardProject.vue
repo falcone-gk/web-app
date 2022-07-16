@@ -37,10 +37,10 @@
 }
 .card-description {
   text-align: left;
-  line-height: 1.5em;
 
   h1 {
     color: #ffffff;
+    margin-bottom: .5em;
   }
 
   p {

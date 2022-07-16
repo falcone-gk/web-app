@@ -63,7 +63,7 @@ const technologies: string[] = ["Python", "Django", "HTML", "CSS", "Javascript",
 
 <style lang="scss">
 section {
-  margin: 18em 0;
+  margin: 20em 0;
 }
 
 .job-title {
@@ -120,7 +120,7 @@ section {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   grid-gap: 2rem;
 }
 
