@@ -20,6 +20,7 @@
       <CardProject />
       <CardProject />
     </div>
+    <SeeMore link="#"/>
   </section>
   <section class="posts">
     <h1 class="section-title">Posts</h1>
@@ -29,6 +30,7 @@
       <CardPost />
       <CardPost />
     </div>
+    <SeeMore link="#"/>
   </section>
   <section id="contact" class="contact-me">
     <h1 class="section-title">Contact me</h1>
@@ -51,6 +53,7 @@
 <script setup lang="ts">
 import CardProject from '@/components/CardProject.vue'
 import CardPost from '@/components/CardPost.vue'
+import SeeMore from '@/components/custom_elements/SeeMore.vue'
 import InputForm from '@/components/custom_elements/InputForm.vue'
 import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
