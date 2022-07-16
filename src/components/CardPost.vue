@@ -4,7 +4,7 @@
       <h1 class="post-title">Título de un post</h1>
       <p>Descripción: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quaerat, quam rem dignissimos illo eum necessitatibus distinctio? Rem, qui magnam.</p>
       <div class="read-more">
-        <a href="#">Read more -></a>
+        <a href="#">Read more</a>
       </div>
     </div>
     <div class="post-date">
@@ -60,6 +60,11 @@
 
     &:hover {
       color: var(--primary-dark-color)
+    }
+
+    &::after {
+      content: "→";
+      margin-left: 1em;
     }
   }
 }
