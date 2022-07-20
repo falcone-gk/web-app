@@ -52,7 +52,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import http from '@/plugins/http-common'
+import http from '@/helpers/http-common'
 
 import CardProject from '@/components/CardProject.vue'
 import CardPost from '@/components/CardPost.vue'
