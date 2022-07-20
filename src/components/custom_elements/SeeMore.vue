@@ -1,13 +1,17 @@
 <template>
   <div class="see-more">
-    <a :href="props.link">See More</a>
+    <a @click.prevent="linkTo">See More</a>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
+import { Router, useRouter } from 'vue-router';
 
 const props = defineProps(["link"])
+const router: Router = useRouter()
+
+const linkTo = () => router.push({ path: props.link })
 </script>
 
 <style lang="scss" scoped>
@@ -15,6 +19,7 @@ const props = defineProps(["link"])
   margin-top: 2em;
   a {
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     color: var(--primary-color);
     text-decoration: none;
