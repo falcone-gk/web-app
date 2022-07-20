@@ -25,10 +25,10 @@
   <section class="posts">
     <h1 class="section-title">Posts</h1>
     <div class="latest-post-list">
-      <CardPost />
-      <CardPost />
-      <CardPost />
-      <CardPost />
+      <CardPost v-for="(post, index) in posts" :key="'post-' + index"
+      :title="post['title']"
+      :description="post['description']"
+      :created="post['created']" />
     </div>
     <SeeMore link="#"/>
   </section>
@@ -62,12 +62,14 @@ import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
 // Component data
 const projects = ref([])
+const posts = ref([])
 
 const technologies: string[] = ["Python", "Django", "HTML", "CSS", "Javascript", "Typescript", "VueJs"]
 
 http.get('api/home')
   .then(response => {
     projects.value = response.data.summary_project
+    posts.value = response.data.summary_post
   })
 
 </script>
