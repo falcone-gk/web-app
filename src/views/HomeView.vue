@@ -23,7 +23,7 @@
     <SeeMore link="#"/>
   </section>
   <section class="posts">
-    <h1 class="section-title">Posts</h1>
+    <h1 class="section-title">Blog</h1>
     <div class="latest-post-list">
       <CardPost v-for="(post, index) in posts" :key="'post-' + index"
       :title="post['title']"
