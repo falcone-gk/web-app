@@ -20,7 +20,7 @@
       :description="project['description']"
       :tags="project['tags']" />
     </div>
-    <SeeMore link="#"/>
+    <SeeMore link="/projects"/>
   </section>
   <section class="posts">
     <h1 class="section-title">Blog</h1>
@@ -30,7 +30,7 @@
       :description="post['description']"
       :created="post['created']" />
     </div>
-    <SeeMore link="#"/>
+    <SeeMore link="/blog"/>
   </section>
   <section id="contact" class="contact-me">
     <h1 class="section-title">Contact me</h1>
