@@ -15,10 +15,10 @@
   <section class="projects">
     <h1 class="section-title">Projects</h1>
     <div class="project-list">
-      <CardProject />
-      <CardProject />
-      <CardProject />
-      <CardProject />
+      <CardProject v-for="(project, index) in projects" :key="'py-' + index"
+      :title="project['title']"
+      :description="project['description']"
+      :tags="project['tags']" />
     </div>
     <SeeMore link="#"/>
   </section>
@@ -51,13 +51,24 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import http from '@/plugins/http-common'
+
 import CardProject from '@/components/CardProject.vue'
 import CardPost from '@/components/CardPost.vue'
 import SeeMore from '@/components/custom_elements/SeeMore.vue'
 import InputForm from '@/components/custom_elements/InputForm.vue'
 import TextareaField from '@/components/custom_elements/TextareaField.vue'
 
+// Component data
+const projects = ref([])
+
 const technologies: string[] = ["Python", "Django", "HTML", "CSS", "Javascript", "Typescript", "VueJs"]
+
+http.get('api/home')
+  .then(response => {
+    projects.value = response.data.summary_project
+  })
 
 </script>
 
