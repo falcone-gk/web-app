@@ -19,6 +19,7 @@ import CardProject from '@/components/CardProject.vue'
 
 const projects = ref([])
 
+// Get projects list when component is created.
 const projectURL = 'api/projects'
 http.get(projectURL)
   .then(response => {
