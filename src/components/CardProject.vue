@@ -1,13 +1,13 @@
 <template>
   <div class="card-container">
     <div class="card-description">
-      <h1>Project Name</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae consectetur quibusdam tempora modi magnam nulla minima tenetur in animi harum!</p>
+      <h1>{{ props.title }}</h1>
+      <p>{{ props.description }}</p>
     </div>
     <div class="card-chips">
-      <span class="chip">VueJs</span>
-      <span class="chip">VueJs</span>
-      <span class="chip">VueJs</span>
+      <span v-for="(tag, index) in tags" :key="index" class="chip">
+        {{ tag.name }}
+      </span>
     </div>
     <div class="card-buttons">
       <a>View Code</a>
@@ -15,6 +15,12 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { defineProps } from 'vue';
+
+const props = defineProps(['title', 'description', 'tags'])
+</script>
 
 <style lang="scss" scoped>
 .card-container {
@@ -50,6 +56,7 @@
 }
 .card-chips {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
 }
 .card-buttons {
