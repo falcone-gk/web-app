@@ -1,4 +1,5 @@
 <template>
+  <ModalVue />
   <NavBar />
   <main :class="mq">
     <router-view/>
@@ -7,6 +8,7 @@
 
 <script setup lang="ts">
 import { useMq } from "vue3-mq"
+import ModalVue from '@/components/ModalVue.vue';
 import NavBar from '@/components/NavBar.vue'
 
 const mq = useMq()
