@@ -15,10 +15,10 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '@/stores/modal'
+import { useModalStore } from '@/stores/modal'
 import BaseButton from './custom_elements/BaseButton.vue';
 
-const store = useStore()
+const store = useModalStore()
 const onClose = () => store.$reset()
 </script>
 

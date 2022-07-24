@@ -6,7 +6,7 @@ interface modalData {
   isActive: boolean
 }
 
-export const useStore = defineStore('modal', {
+export const useModalStore = defineStore('modal', {
   state: (): modalData => {
     return {
       title: '',

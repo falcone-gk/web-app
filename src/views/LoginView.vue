@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { useStore } from '@/stores/modal'
+import { useModalStore } from '@/stores/modal'
 import InputForm from '@/components/custom_elements/InputForm.vue';
 import BaseButton from '@/components/custom_elements/BaseButton.vue';
 import http from '@/helpers/http-common';
@@ -28,7 +28,7 @@ const data = reactive({
   password: ''
 })
 
-const store = useStore()
+const store = useModalStore()
 
 const onLogin = () => {
   const loginUrlApi = '/token-auth/'
