@@ -21,6 +21,7 @@ const mq = useMq()
 
 header {
   display: flex;
+  background-color: var(--bg-dark);
   align-items: center;
   padding: 1em var(--side-padding);
 
