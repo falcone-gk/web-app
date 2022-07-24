@@ -1,24 +1,25 @@
 <template>
   <transition name="modal">
-    <div v-show="props.isActive" class="modal">
+    <div v-show="store.isActive" class="modal">
       <div class="modal-header">
-        <h1>{{ props.title }}</h1>
+        <h1>{{ store.title }}</h1>
       </div>
       <div class="modal-body">
-        <p>{{ props.message }}</p>
+        <p>{{ store.message }}</p>
       </div>
       <div class="modal-btn">
-       <BaseButton value="Close" /> 
+       <BaseButton @click.prevent="onClose" value="Close" /> 
       </div>
     </div>
   </transition>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { useStore } from '@/stores/modal'
 import BaseButton from './custom_elements/BaseButton.vue';
 
-const props = defineProps(['isActive', 'title', 'message'])
+const store = useStore()
+const onClose = () => store.$reset()
 </script>
 
 <style lang="scss" scoped>
@@ -30,7 +31,7 @@ const props = defineProps(['isActive', 'title', 'message'])
   background-color: #121212;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translate(-50%, 20px);
+  transform: translate(-50%, 100px);
   padding: .5em 1em;
   border-radius: 5px;
   border: 1px solid var(--primary-color);
