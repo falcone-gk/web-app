@@ -9,6 +9,8 @@ const router = createRouter({
 
 
 router.beforeEach((to, from, next) => {
+  // App has admin page so that when a user tries to get into an admin page
+  // if it doesn't have credentials it is redirected to login page.
   const store = useAuthStore()
   const authenticated: boolean = store.isAuthenticated
   const onlyAdmin: boolean = to.matched.some(record => record.meta.isAdmin)
