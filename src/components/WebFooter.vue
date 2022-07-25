@@ -15,7 +15,7 @@ const authStore = useAuthStore()
 
 // Send to login page with a redirect query.
 const toLogin = () => {
-  router.push({path: '/login', query: { redirect: route.fullPath }})
+  if (route.path !== '/login') router.push('/login')
 }
 
 // Logout that reset authStore to default values (no user data at all)
