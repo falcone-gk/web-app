@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { useModalStore } from './modal';
+import router from '@/router';
 import http from '@/helpers/http-common';
 
 interface user {
@@ -19,8 +20,8 @@ export const useAuthStore = defineStore('auth', {
   actions: {
     async login(data: {username: string, password: string}) {
       const modalStore = useModalStore()
-
       const url = '/token-auth/'
+
       try {
         // Making a post request to verify if user is an admin.
         const tokenData = await http.post(url, data)
@@ -28,6 +29,7 @@ export const useAuthStore = defineStore('auth', {
         this.isAuthenticated = true
         this.token = tokenData.data.token
         this.username = data.username
+        router.push('/admin')
       } catch(error) {
         // In case user data is not correct we show modal with the error.
         modalStore.$patch({
