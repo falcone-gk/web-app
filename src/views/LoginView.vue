@@ -18,33 +18,26 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { useModalStore } from '@/stores/modal'
+import { useAuthStore } from '@/stores/auth'
+import { Router, useRouter } from 'vue-router';
 import InputForm from '@/components/custom_elements/InputForm.vue';
 import BaseButton from '@/components/custom_elements/BaseButton.vue';
-import http from '@/helpers/http-common';
 
 const data = reactive({
   username: '',
   password: ''
 })
 
-const store = useModalStore()
+const router: Router = useRouter()
+const authStore = useAuthStore()
 
-const onLogin = () => {
-  const loginUrlApi = '/token-auth/'
-  http.post(
-    loginUrlApi,
-    data
-  ).then(response => {
-    // Storing token in local storage.
-    localStorage.setItem('token', response.data.token)
-  }).catch(error => {
-    store.$patch({
-      title: 'Authentication error',
-      message: 'Credentials sent to server are not correct.',
-      isActive: true
+// Login event
+const onLogin = async () => {
+  await authStore.login(data)
+    .then(() => {
+      // In case that credentials sent are correct the user is redirect to admin page.
+      router.push({path: '/admin'})
     })
-  })
 }
 </script>
 
