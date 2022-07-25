@@ -27,6 +27,7 @@ header {
   background-color: var(--bg-dark);
   align-items: center;
   padding: 1em var(--side-padding);
+  z-index: 2;
 
   &.smMinus {
     flex-direction: column;

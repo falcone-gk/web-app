@@ -35,7 +35,7 @@ const onClose = () => store.$reset()
   padding: .5em 1em;
   border-radius: 5px;
   border: 1px solid var(--primary-color);
-  z-index: -999;
+  z-index: 1;
 }
 .modal-header {
   h1 {
