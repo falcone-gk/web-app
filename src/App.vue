@@ -4,12 +4,14 @@
   <main :class="mq">
     <router-view/>
   </main>
+  <WebFooter />
 </template>
 
 <script setup lang="ts">
 import { useMq } from "vue3-mq"
 import WebModal from '@/components/WebModal.vue';
 import NavBar from '@/components/NavBar.vue'
+import WebFooter from '@/components/WebFooter.vue'
 
 const mq = useMq()
 </script>
@@ -20,6 +22,7 @@ const mq = useMq()
 :root {
   --bg-dark: #0c0c0c;
   --side-padding: min(12vw, 250px);
+  --text-default-color: #fff;
   --primary-color: #00e056;
   --primary-dark-color: #00b947;
   --para-color: hsla(0,0%,96.1%,0.65);
@@ -51,6 +54,9 @@ main {
   font-family: 'Lato', sans-serif, Avenir, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  color: var(--text-default-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>
