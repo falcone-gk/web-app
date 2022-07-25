@@ -123,7 +123,6 @@ section {
 
 .description {
   font-size: min(3.5vw, 20px);
-  color: var(--para-color);
   opacity: .75;
   width: 70%;
   min-width: 350px;

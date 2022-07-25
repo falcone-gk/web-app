@@ -22,7 +22,8 @@ const mq = useMq()
 :root {
   --bg-dark: #0c0c0c;
   --side-padding: min(12vw, 250px);
-  --text-default-color: #fff;
+  --light-text: #fff;
+  --dark-text: #000;
   --primary-color: #00e056;
   --primary-dark-color: #00b947;
   --para-color: hsla(0,0%,96.1%,0.65);
@@ -54,7 +55,7 @@ main {
   font-family: 'Lato', sans-serif, Avenir, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-default-color);
+  color: var(--para-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;

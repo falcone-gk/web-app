@@ -39,10 +39,6 @@ const props = defineProps(['title', 'description', 'created'])
     color: #ffffff;
     margin-bottom: .5em;
   }
-
-  p {
-    color: var(--para-color);
-  }
 }
 
 .post-date {

@@ -48,11 +48,6 @@ const props = defineProps(['title', 'description', 'tags'])
     color: #ffffff;
     margin-bottom: .5em;
   }
-
-  p {
-    color: var(--para-color);
-  }
-
 }
 .card-chips {
   display: flex;

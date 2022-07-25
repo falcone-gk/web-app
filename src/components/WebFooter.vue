@@ -30,9 +30,6 @@ const toLogout = () => {
 footer {
   padding: 2em 1em;
   margin-top: auto;
-  * {
-    color: var(--para-color);
-  }
   a {
     cursor: pointer;
     color: var(--primary-color);
