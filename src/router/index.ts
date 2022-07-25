@@ -17,7 +17,6 @@ router.beforeEach((to, from, next) => {
   if (!authenticated && onlyAdmin) {
     return next({
       path: '/login',
-      query: { redirect: to.fullPath }
     })
   }
   next()
