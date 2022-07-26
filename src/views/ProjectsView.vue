@@ -28,4 +28,5 @@ http.get(projectURL)
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/sections/projects"
 </style>

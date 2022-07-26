@@ -26,3 +26,7 @@ http.get(poststURL)
     posts.value = response.data.results
   })
 </script>
+
+<style lang="scss" scoped>
+@import "@/styles/sections/blog"
+</style>
