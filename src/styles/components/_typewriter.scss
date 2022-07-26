@@ -1,0 +1,30 @@
+// vue-typewriter style
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+.is-typed {
+  display: inline;
+
+  span.typed {
+    display: inline-block;
+    color: var(--primary-color);
+    vertical-align: bottom;
+    margin-right: 5px;
+  }
+
+  span.cursor {
+    display: inline-block;
+    background-color: var(--primary-color);
+    width: min(1vw, 10px);
+    animation: fadeIn 1s infinite alternate;
+  }
+}
