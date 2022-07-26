@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap');
 
+// z-index values
+$z-index: (
+  modal: 100,
+  navbar: 200,
+  main: 50,
+
+  // from top to below:
+  top: 53,
+  middle: 52,
+  below: 51,
+);
+
 :root {
   --bg-dark: #0c0c0c;
   --side-padding: min(12vw, 250px);

@@ -11,7 +11,7 @@
   padding: .5em 1em;
   border-radius: 5px;
   border: 1px solid var(--primary-color);
-  z-index: 1;
+  z-index: map-get($z-index, modal);
 }
 .modal-header {
   h1 {

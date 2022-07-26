@@ -1,6 +1,7 @@
 // Giving style to main layout
 main {
   padding: 0 var(--side-padding);
+  z-index: map-get($z-index, main);
 
   &.mdMinus {
     padding: 0 1.5em;
