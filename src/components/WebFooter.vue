@@ -25,17 +25,3 @@ const toLogout = () => {
   router.push({ path: '/login' })
 }
 </script>
-
-<style lang="scss" scoped>
-footer {
-  padding: 2em 1em;
-  margin-top: auto;
-  a {
-    cursor: pointer;
-    color: var(--primary-color);
-    &:hover {
-      color: var(--primary-dark-color);
-    }
-  }
-}
-</style>
