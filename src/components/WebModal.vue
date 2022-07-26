@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div v-show="store.isActive" class="modal">
+    <div id="modal" v-show="store.isActive" class="modal">
       <div class="modal-header">
         <h1>{{ store.title }}</h1>
       </div>
@@ -19,4 +19,12 @@ import { useModalStore } from '@/stores/modal'
 
 const store = useModalStore()
 const onClose = () => store.$reset()
+
+// Function to close modal when a click happens outside modal.
+window.onclick = (event: Event) => {
+  const target = event.target as HTMLElement
+  if (target.id !== "modal") {
+    store.$reset()
+  }
+}
 </script>
