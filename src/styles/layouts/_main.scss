@@ -1,0 +1,8 @@
+// Giving style to main layout
+main {
+  padding: 0 var(--side-padding);
+
+  &.mdMinus {
+    padding: 0 1.5em;
+  }
+}

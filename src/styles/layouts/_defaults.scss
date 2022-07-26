@@ -1,3 +1,4 @@
+// Default styles that affects the entire app.
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,14 +11,6 @@ html{
 
 body {
   background-color: var(--bg-dark);
-}
-
-main {
-  padding: 0 var(--side-padding);
-
-  &.mdMinus {
-    padding: 0 1.5em;
-  }
 }
 
 #app {
