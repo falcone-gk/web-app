@@ -42,14 +42,4 @@ beforeCreate()
 
 </script>
 
-<style lang="scss" scoped>
-.login {
-  form {
-    width: 350px; 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-</style>
+<style lang="scss" src="@/styles/pages/_login.scss" scoped />
