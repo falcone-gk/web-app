@@ -16,48 +16,4 @@ import WebFooter from '@/components/WebFooter.vue'
 const mq = useMq()
 </script>
 
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap');
-
-:root {
-  --bg-dark: #0c0c0c;
-  --side-padding: min(12vw, 250px);
-  --light-text: #fff;
-  --dark-text: #000;
-  --primary-color: #00e056;
-  --primary-dark-color: #00b947;
-  --para-color: hsla(0,0%,96.1%,0.65);
-}
-
-html{
-  scroll-behavior:smooth
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--bg-dark);
-}
-
-main {
-  padding: 0 var(--side-padding);
-
-  &.mdMinus {
-    padding: 0 1.5em;
-  }
-}
-
-#app {
-  font-family: 'Lato', sans-serif, Avenir, Helvetica, Arial;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--para-color);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-</style>
+<style lang="scss" src="@/styles/global.scss" />

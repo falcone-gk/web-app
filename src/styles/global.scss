@@ -1,3 +1,8 @@
 // Import all styles
 
-@import "components/buttons"
+// Core styles
+@import "abstracts/variables";
+@import "layouts/defaults";
+
+// global component
+@import "components/buttons";
