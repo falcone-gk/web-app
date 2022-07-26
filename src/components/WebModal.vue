@@ -8,7 +8,7 @@
         <p>{{ store.message }}</p>
       </div>
       <div class="modal-btn">
-       <BaseButton @click.prevent="onClose" value="Close" /> 
+       <button @click.prevent="onClose" class="app-btn">Close</button>
       </div>
     </div>
   </transition>
@@ -16,7 +16,6 @@
 
 <script setup lang="ts">
 import { useModalStore } from '@/stores/modal'
-import BaseButton from './custom_elements/BaseButton.vue';
 
 const store = useModalStore()
 const onClose = () => store.$reset()

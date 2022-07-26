@@ -11,7 +11,7 @@
       label="Password"
       name="password"
       type="password" />
-      <BaseButton @click.prevent="authStore.login(data)" value="Login"/>
+      <button @click.prevent="authStore.login(data)" class="app-btn">Login</button>
     </form>
   </div>
 </template>
@@ -21,7 +21,6 @@ import { reactive } from 'vue';
 import { useAuthStore } from '@/stores/auth'
 import { Router, useRouter } from 'vue-router';
 import InputForm from '@/components/custom_elements/InputForm.vue';
-import BaseButton from '@/components/custom_elements/BaseButton.vue';
 
 const data = reactive({
   username: '',
