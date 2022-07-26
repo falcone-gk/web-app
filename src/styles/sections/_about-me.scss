@@ -1,0 +1,48 @@
+// AboutMe style (shown in HomeView)
+.job-title {
+  text-align: left;
+
+  h1 {
+    color: var(--light-text);
+    font-size: min(7vw, 60px);
+    white-space: nowrap;
+  }
+}
+
+.description {
+  font-size: min(3.5vw, 20px);
+  opacity: .75;
+  width: 70%;
+  min-width: 350px;
+  max-width: 750px;
+  margin-bottom: 1.2vh;
+}
+
+// Style to link that goes to contact-url.
+@keyframes slide {
+  0% {
+    -webkit-transform: translateX(5px);
+  }
+
+  50% {
+    -webkit-transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(5px);
+  }
+}
+
+.contact-url {
+  position: relative;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+
+  &::after {
+    content: ">";
+    position: absolute;
+    animation: slide 1.5s infinite;
+  }
+}

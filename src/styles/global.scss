@@ -3,6 +3,7 @@
 // Core styles
 @import "abstracts/variables";
 @import "layouts/defaults";
+@import "sections/general";
 
 // layouts styles
 @import "layouts/header";
@@ -11,4 +12,5 @@
 
 // global component
 @import "components/modal";
+@import "components/typewriter";
 @import "components/buttons";
