@@ -21,7 +21,6 @@
   text-align: left;
 
   h1 {
-    color: #ffffff;
     margin-bottom: .5em;
   }
 }
@@ -52,6 +51,6 @@
 .chip {
   font-size: 11px;
   padding: 3px 8px;
-  background-color: #ffffff;
+  background-color: var(--light-color);
   border-radius: 5px;
 }

@@ -15,20 +15,20 @@
 
   h1 {
     font-size: 18px;
-    color: #ffffff;
+    color: var(--light-text);
     margin-bottom: .5em;
   }
 }
 
 .post-date {
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid var(--light-color);
   margin-top: 1em;
   padding-top: .5em;
   text-align: left;
 
   p {
     font-size: 12px;
-    color: #ffffff;
+    color: var(--light-text);
   }
 }
 

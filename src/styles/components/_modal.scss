@@ -15,7 +15,6 @@
 }
 .modal-header {
   h1 {
-    color: #fff;
     font-size: 16px;
     border-bottom: 1px solid var(--primary-color);
     padding-bottom: .5em;
@@ -24,7 +23,7 @@
 .modal-body {
   padding: 1em 0;
   p {
-    color: #fff;
+    color: var(--light-text);
     font-size: 13px;
   }
 }
