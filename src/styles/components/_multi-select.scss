@@ -1,0 +1,20 @@
+label {
+  display: block;
+  color: var(--input-default-color);
+  font-size: 14px;
+  margin: 15px 0 5px 0;
+}
+
+select {
+  padding: 5px;
+  width: 100%;
+  background-color: var(--bg-dark);
+
+  option {
+    color: var(--light-text);
+
+    &:checked {
+      background: var(--primary-dark-color) linear-gradient(0deg, var(--primary-dark-color) 0%, var(--primary-dark-color) 100%);;
+    }
+  }
+}
