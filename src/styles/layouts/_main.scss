@@ -1,5 +1,6 @@
 // Giving style to main layout
 main {
+  margin-top: 4em;
   padding: 0 var(--side-padding);
   z-index: map-get($z-index, main);
 
