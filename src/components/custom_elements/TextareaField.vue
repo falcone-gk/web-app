@@ -1,9 +1,9 @@
 <template>
+  <label :for="props.name">{{ props.label }}</label>
   <textarea
   @input="handleInput"
   :name="props.name"
   :id="props.name"
-  :placeholder="props.label"
   rows="10"></textarea>
 </template>
 

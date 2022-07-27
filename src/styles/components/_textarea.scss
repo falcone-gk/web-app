@@ -1,4 +1,10 @@
 // TextareaField style from '@/components/custom_elements/TextareaField.vue'
+label {
+  display: block;
+  color: var(--input-default-color);
+  font-size: 14px;
+  margin: 15px 0 5px 0;
+}
 textarea {
   width: 100%;
   resize: vertical;
@@ -6,8 +12,10 @@ textarea {
   border-radius: 5px;
   background: transparent;
   color: white;
+  border-color: var(--input-default-color);
 
-  &::placeholder {
-    color: var(--primary-color);
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
   }
 }
