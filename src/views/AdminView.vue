@@ -8,6 +8,7 @@
         <MultipleSelect v-model="projectData.tags" label="Tags" name="tags" :options="options" />
         <InputForm v-model="projectData.source_code" label="Source code" name="source-code" type="url" placeholder="Source code" />
         <InputForm v-model="projectData.source_app" label="Source app" name="source-app" type="url" placeholder="Source app" />
+        <button @click.prevent="submitProject" class="app-btn" type="submit">Create Project</button>
       </form>
     </section>
     <section class="admin-posts">
@@ -36,6 +37,7 @@ import TextareaField from '@/components/custom_elements/TextareaField.vue';
 import MultipleSelect from '@/components/custom_elements/MultipleSelect.vue';
 import { ref, reactive } from 'vue';
 import { computed } from '@vue/reactivity';
+import { AxiosError } from 'axios';
 import { marked } from 'marked';
 import http from '@/helpers/http-admin'
 
@@ -58,6 +60,17 @@ const markdown = ref("[comment]: <> (Write your post with markdown syntax!)")
 const htmlMarkdown = computed(() => {
   return marked(markdown.value)
 })
+
+const submitProject = async () => {
+  try {
+    const url = '/api/projects/'
+    const response = await http.post(url, projectData)
+    console.log(response.data)
+  } catch(error) {
+    const err = error as AxiosError
+    console.log(err.response?.data)
+  }
+}
 
 // Get tags list.
 const getTags = async () => {
