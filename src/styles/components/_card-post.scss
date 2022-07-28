@@ -1,6 +1,6 @@
 // CardPost style from '@/components/CardPost.vue'
 .post {
-  background-color: #121212;
+  background-color: var(--dark-color);
   border-radius: 5px;
   padding: .5em;
   transition: transform .5s ease, border-color .5s ease-out;
