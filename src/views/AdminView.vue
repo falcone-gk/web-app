@@ -22,8 +22,8 @@
             <input v-model="tab" value="preview" type="radio" name="tabs" id="preview" />
             <label for="preview">Preview</label>
           </div>
-          <textarea v-if="tab === 'code'" name="post-markdown" id="post-input" rows="50"></textarea>
-          <div v-if="tab === 'preview'" class="preview-post"></div>
+          <textarea v-if="tab === 'code'" v-model="markdown" name="post-markdown" id="post-input" rows="50" />
+          <div v-if="tab === 'preview'" v-html="htmlMarkdown" class="preview-post"></div>
         </div>
       </form>
     </section>
@@ -35,6 +35,8 @@ import InputForm from '@/components/custom_elements/InputForm.vue';
 import TextareaField from '@/components/custom_elements/TextareaField.vue';
 import MultipleSelect from '@/components/custom_elements/MultipleSelect.vue';
 import { ref } from 'vue';
+import { computed } from '@vue/reactivity';
+import { marked } from 'marked';
 
 interface tag {
   id: number,
@@ -53,6 +55,10 @@ const options: tag[] = [
 ]
 
 const tab = ref("code")
+const markdown = ref("[comment]: <> (Write your post with markdown syntax!)")
+const htmlMarkdown = computed(() => {
+  return marked(markdown.value)
+})
 </script>
 
 
