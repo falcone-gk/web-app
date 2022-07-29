@@ -3,11 +3,11 @@
     <section class="admin-projects">
       <h1>Project form</h1>
       <form class="admin-projects">
-        <InputForm v-model="projectData.title" label="Title" name="title" placeholder="title" />
+        <InputForm v-model="projectData.title" label="Title" name="title" placeholder="title" :error="vProjectData.title.$errors[0]" />
         <TextareaField v-model="projectData.description" label="Description" name="description" />
         <MultipleSelect v-model="projectData.tags" label="Tags" name="tags" :options="options" />
-        <InputForm v-model="projectData.source_code" label="Source code" name="source-code" type="url" placeholder="Source code" />
-        <InputForm v-model="projectData.source_app" label="Source app" name="source-app" type="url" placeholder="Source app" />
+        <InputForm v-model="projectData.source_code" label="Source code" name="source-code" type="url" placeholder="Source code" :error="vProjectData.source_code.$errors[0]"/>
+        <InputForm v-model="projectData.source_app" label="Source app" name="source-app" type="url" placeholder="Source app" :error="vProjectData.source_app.$errors[0]"/>
         <button @click.prevent="submitProject" class="app-btn" type="submit">Create Project</button>
       </form>
     </section>
@@ -39,6 +39,8 @@ import { ref, reactive } from 'vue';
 import { computed } from '@vue/reactivity';
 import { AxiosError } from 'axios';
 import { marked } from 'marked';
+import useVuelidate from '@vuelidate/core';
+import { required, url } from '@vuelidate/validators';
 import http from '@/helpers/http-admin'
 
 interface tag {
@@ -54,6 +56,16 @@ const projectData = reactive({
   source_code: '',
   source_app: '',
 })
+const rulesProjectData = computed(() => {
+  return {
+    title: { required },
+    description: { required },
+    tags: { required },
+    source_code: { url },
+    source_app: { url }
+  }
+})
+const vProjectData = useVuelidate(rulesProjectData, projectData)
 const tab = ref("code")
 const markdown = ref("[comment]: <> (Write your post with markdown syntax!)")
 
@@ -62,6 +74,9 @@ const htmlMarkdown = computed(() => {
 })
 
 const submitProject = async () => {
+  const isFormCorrect = await vProjectData.value.$validate()
+  if (!isFormCorrect) return
+
   try {
     const url = '/api/projects/'
     const response = await http.post(url, projectData)
