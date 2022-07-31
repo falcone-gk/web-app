@@ -8,3 +8,8 @@ h1 {
 p {
   color: var(--para-color);
 }
+
+.error-msg {
+  color: var(--input-error-color);
+  font-size: 11px;
+}
