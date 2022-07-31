@@ -3,12 +3,13 @@
   <select @input="handleInput" ref="refSelect" :name="props.name" :id="props.name" multiple>
     <option v-for="(opt, index) in props.options" :key="'opt-'+ index" :value="opt.id">{{ opt.name }}</option>
   </select>
+  <span v-if="error" class="error-msg">{{ error.$message }}</span>
 </template>
 
 <script lang="ts" setup>
 import { defineProps, defineEmits, ref } from 'vue';
 
-const props = defineProps(['modelValue', 'label', 'name', 'options'])
+const props = defineProps(['modelValue', 'label', 'name', 'options', 'error'])
 const emits = defineEmits(['update:modelValue'])
 
 const refSelect = ref<HTMLSelectElement | null>(null)
