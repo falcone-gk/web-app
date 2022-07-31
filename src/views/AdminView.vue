@@ -4,8 +4,8 @@
       <h1>Project form</h1>
       <form class="admin-projects">
         <InputForm v-model="projectData.title" label="Title" name="title" placeholder="title" :error="vProjectData.title.$errors[0]" />
-        <TextareaField v-model="projectData.description" label="Description" name="description" />
-        <MultipleSelect v-model="projectData.tags" label="Tags" name="tags" :options="options" />
+        <TextareaField v-model="projectData.description" label="Description" name="description" :error="vProjectData.description.$errors[0]" />
+        <MultipleSelect v-model="projectData.tags" label="Tags" name="tags" :options="options" :error="vProjectData.tags.$errors[0]" />
         <InputForm v-model="projectData.source_code" label="Source code" name="source-code" type="url" placeholder="Source code" :error="vProjectData.source_code.$errors[0]"/>
         <InputForm v-model="projectData.source_app" label="Source app" name="source-app" type="url" placeholder="Source app" :error="vProjectData.source_app.$errors[0]"/>
         <button @click.prevent="submitProject" class="app-btn" type="submit">Create Project</button>
@@ -41,7 +41,8 @@ import { AxiosError } from 'axios';
 import { marked } from 'marked';
 import useVuelidate from '@vuelidate/core';
 import { required, url } from '@vuelidate/validators';
-import http from '@/helpers/http-admin'
+import httpAdmin from '@/helpers/http-admin'
+import httpCommon from '@/helpers/http-common'
 
 interface tag {
   id: number,
@@ -79,7 +80,7 @@ const submitProject = async () => {
 
   try {
     const url = '/api/projects/'
-    const response = await http.post(url, projectData)
+    const response = await httpAdmin.post(url, projectData)
     console.log(response.data)
   } catch(error) {
     const err = error as AxiosError
@@ -91,7 +92,7 @@ const submitProject = async () => {
 const getTags = async () => {
   try {
     const url = '/api/list-tags'
-    const response = await http.get(url)
+    const response = await httpCommon.get(url)
     options.value = response.data
   } catch(error) {
     return error
