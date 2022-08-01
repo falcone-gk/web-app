@@ -23,7 +23,7 @@
             <input v-model="tab" value="preview" type="radio" name="tabs" id="preview" />
             <label for="preview">Preview</label>
           </div>
-          <textarea v-if="tab === 'code'" v-model="markdown" name="post-markdown" id="post-input" rows="50" />
+          <textarea v-if="tab === 'code'" v-model="postData.body" name="post-markdown" id="post-input" rows="50" />
           <div v-if="tab === 'preview'" v-html="htmlMarkdown" class="preview-post"></div>
         </div>
       </form>
@@ -39,6 +39,7 @@ import { ref, reactive } from 'vue';
 import { computed } from '@vue/reactivity';
 import { AxiosError } from 'axios';
 import { marked } from 'marked';
+import { useModalStore } from '@/stores/modal';
 import useVuelidate from '@vuelidate/core';
 import { required, url } from '@vuelidate/validators';
 import http from '@/helpers/http-admin'
@@ -48,7 +49,11 @@ interface tag {
   name: string
 }
 
+// Modal store imported to show successful message
+const modalStore = useModalStore()
+// Store all tags optiones that are elegible
 const options = ref<tag | null>(null)
+// Reactive data to store project form values.
 const projectData = reactive({
   title: '',
   description: '',
@@ -56,6 +61,7 @@ const projectData = reactive({
   source_code: '',
   source_app: '',
 })
+// Computed rules to store validation form.
 const rulesProjectData = computed(() => {
   return {
     title: { required },
@@ -65,25 +71,37 @@ const rulesProjectData = computed(() => {
     source_app: { url }
   }
 })
+// Creates form validation for project form
 const vProjectData = useVuelidate(rulesProjectData, projectData)
-const tab = ref("code")
-const markdown = ref("[comment]: <> (Write your post with markdown syntax!)")
 
-const htmlMarkdown = computed(() => {
-  return marked(markdown.value)
+// Tab ref to know which tab is currently active.
+const tab = ref("code")
+const postData = reactive({
+  title: '',
+  description: '',
+  body: '[comment]: <> (Write your post with markdown syntax!)'
 })
 
+const htmlMarkdown = computed(() => {
+  return marked(postData.body)
+})
+
+// Logic to submit a new project.
 const submitProject = async () => {
   const isFormCorrect = await vProjectData.value.$validate()
   if (!isFormCorrect) return
 
   try {
     const url = '/api/projects/'
-    const response = await http.post(url, projectData)
-    console.log(response.data)
+    await http.post(url, projectData)
+    modalStore.$patch({
+      title: 'Successful request',
+      message: 'New project was created successfuly!',
+      isActive: true
+    })
   } catch(error) {
     const err = error as AxiosError
-    console.log(err.response?.data)
+    return err
   }
 }
 
