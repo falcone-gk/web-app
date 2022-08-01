@@ -41,8 +41,7 @@ import { AxiosError } from 'axios';
 import { marked } from 'marked';
 import useVuelidate from '@vuelidate/core';
 import { required, url } from '@vuelidate/validators';
-import httpAdmin from '@/helpers/http-admin'
-import httpCommon from '@/helpers/http-common'
+import http from '@/helpers/http-admin'
 
 interface tag {
   id: number,
@@ -80,7 +79,7 @@ const submitProject = async () => {
 
   try {
     const url = '/api/projects/'
-    const response = await httpAdmin.post(url, projectData)
+    const response = await http.post(url, projectData)
     console.log(response.data)
   } catch(error) {
     const err = error as AxiosError
@@ -92,7 +91,7 @@ const submitProject = async () => {
 const getTags = async () => {
   try {
     const url = '/api/list-tags'
-    const response = await httpCommon.get(url)
+    const response = await http.get(url)
     options.value = response.data
   } catch(error) {
     return error
