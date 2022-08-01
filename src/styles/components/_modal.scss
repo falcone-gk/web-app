@@ -1,13 +1,13 @@
 // App modal style
 .modal {
-  position: absolute;
+  position: fixed;
   text-align: left;
   max-width: 500px;
   min-width: 350px;
   background-color: #121212;
+  top: 70px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translate(-50%, 100px);
   padding: .5em 1em;
   border-radius: 5px;
   border: 1px solid var(--primary-color);
