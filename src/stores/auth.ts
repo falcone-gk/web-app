@@ -29,6 +29,10 @@ export const useAuthStore = defineStore('auth', {
         this.isAuthenticated = true
         this.token = tokenData.data.token
         this.username = data.username
+        // Store token and username in local storage.
+        localStorage.setItem('token', tokenData.data.token)
+        localStorage.setItem('username', data.username)
+        // Redirect to admin page after successful login.
         router.push('/admin')
       } catch(error) {
         // In case user data is not correct we show modal with the error.
@@ -37,6 +41,19 @@ export const useAuthStore = defineStore('auth', {
           message: 'Credentials sent to server are not correct.',
           isActive: true
         })
+      }
+    },
+    checkStoredToken() {
+      const token: string | null = localStorage.getItem('token')
+      const username: string | null = localStorage.getItem('username')
+
+      if (token !== null && username !== null) {
+        // Getting authentication values in auth store.
+        this.isAuthenticated = true,
+        this.token = token
+        this.username = username
+      } else {
+        localStorage.clear()
       }
     }
   }

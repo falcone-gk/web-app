@@ -22,6 +22,7 @@ const toLogin = () => {
 // and redirect to 'login' page.
 const toLogout = () => {
   authStore.$reset()
+  localStorage.clear()
   router.push({ path: '/login' })
 }
 </script>
