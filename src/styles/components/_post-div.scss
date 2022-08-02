@@ -1,0 +1,34 @@
+.preview-post {
+  padding: 1em;
+  width: 100%;
+  height: 793px;
+  background-color: var(--dark-color);
+  overflow: auto;
+  color: var(--light-text);
+
+  p {
+    color: var(--light-text);
+    line-height: 20px;
+  }
+  a {
+    color: var(--primary-color);
+  }
+  img {
+    max-width: 35%;
+    vertical-align: middle;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1em;
+  }
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+

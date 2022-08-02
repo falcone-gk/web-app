@@ -25,7 +25,7 @@
           </div>
           <textarea v-if="tab === 'code'" v-model="postData.body" name="post-markdown" id="post-input" rows="50" />
           <span v-if="vPostData.body.$errors[0]" class="error-msg">{{ vPostData.body.$errors[0].$message }}</span>
-          <div v-if="tab === 'preview'" v-html="htmlMarkdown" class="preview-post"></div>
+          <PostSection v-if="tab == 'preview'" :html="htmlToMarkdown" />
         </div>
         <button @click.prevent="submitPost" class="app-btn" type="submit">Create Post</button>
       </form>
@@ -37,6 +37,7 @@
 import InputForm from '@/components/custom_elements/InputForm.vue';
 import TextareaField from '@/components/custom_elements/TextareaField.vue';
 import MultipleSelect from '@/components/custom_elements/MultipleSelect.vue';
+import PostSection from '@/components/PostSection.vue'
 import { ref, reactive } from 'vue';
 import { computed } from '@vue/reactivity';
 import { AxiosError } from 'axios';
@@ -112,7 +113,7 @@ const rulesPostData = computed(() => {
   }
 })
 // Computed property to transform markdown to html
-const htmlMarkdown = computed(() => {
+const htmlToMarkdown = computed(() => {
   return marked(postData.body)
 })
 // Create form validation
