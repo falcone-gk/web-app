@@ -8,16 +8,34 @@
 
   p {
     color: var(--light-text);
+    font-size: 1rem;
     line-height: 20px;
+  }
+  strong {
+    color: var(--primary-dark-color)
   }
   a {
     color: var(--primary-color);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  li {
+    &::marker {
+      color: var(--primary-color);
+    }
+  }
+  ul, ol {
+    margin: 1em 0;
+    list-style-position: inside;
   }
   img {
     max-width: 35%;
     vertical-align: middle;
   }
   h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
     margin-bottom: 1em;
   }
   h1 {
