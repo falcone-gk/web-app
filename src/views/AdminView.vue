@@ -25,7 +25,7 @@
           </div>
           <textarea v-if="tab === 'code'" v-model="postData.body" name="post-markdown" id="post-input" rows="50" />
           <span v-if="vPostData.body.$errors[0]" class="error-msg">{{ vPostData.body.$errors[0].$message }}</span>
-          <div v-if="tab === 'preview'" v-html="htmlToMarkdown" class="preview-post"></div>
+          <div v-highlightjs v-if="tab === 'preview'" v-html="htmlToMarkdown" class="preview-post"></div>
         </div>
         <button @click.prevent="submitPost" class="app-btn" type="submit">Create Post</button>
       </form>

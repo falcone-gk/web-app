@@ -26,6 +26,9 @@
       color: var(--primary-color);
     }
   }
+  pre {
+    margin: 1em 0;
+  }
   ul, ol {
     margin: 1em 0;
     list-style-position: inside;

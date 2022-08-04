@@ -18,6 +18,7 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue-writer": "^1.2.0",
+    "vue3-highlightjs": "^1.0.5",
     "vue3-mq": "^3.1.0"
   },
   "devDependencies": {
