@@ -5,6 +5,7 @@
       <div class="latest-post-list">
         <CardPost v-for="(post, index) in posts" :key="'post-' + index"
         :title="post['title']"
+        :urlToPost="urlPostPath(post['id'])"
         :description="post['description']"
         :created="post['created']" />
       </div>
@@ -18,6 +19,9 @@ import { ref } from 'vue';
 import CardPost from '@/components/CardPost.vue'
 
 const posts = ref([])
+const urlPostPath = (id: string): string => {
+  return `/blog/${id}`
+}
 
 // Get posts list when component is created.
 const poststURL = 'api/posts-summary'
